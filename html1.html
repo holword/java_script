@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script>
+    </script>
+    <script>  /* ZAJECIA 2 (?), DO FORMULARZA myform */
+        function MyAction() {
+            let name = document.forms["myform"].elements["name"].value;
+            let age = document.forms["myform"].elements["age"].value;
+
+            let message = `Hello ${name}, you are ${age} years old.`
+            document.getElementById("message").innerHTML = message
+        }
+    </script>
+    <script> /*ZAJECIA POCZATKOWE*/
         alert("Hello world!");
         let br = "<br/>";
     </script>
@@ -10,31 +21,32 @@
         function ObliczPodatek(przychod, koszt, stawka) {
             let dochod = przychod - koszt;
             let podatek;
-            if(dochod > 0){
+            if (dochod > 0) {
                 podatek = dochod * stawka / 100;
             } else {
                 podatek = 0
             }
-            return("Podatek wynosi " + podatek + br);
+            return ("Podatek wynosi " + podatek + br);
         }
-        function ObliczPodatekProgresywny (przychod, koszt) {
+        function ObliczPodatekProgresywny(przychod, koszt) {
             let dochod = przychod - koszt;
             let stawka;
-            if(dochod >= 120000) {
+            if (dochod >= 120000) {
                 stawka = 32;
-            } else if(dochod > 0) {
+            } else if (dochod > 0) {
                 stawka = 12;
             } else {
                 stawka = 0
             }
             podatek = dochod * stawka / 100
-            return("Podatek wynosi " + podatek + br);
+            return ("Podatek wynosi " + podatek + br);
         }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>
         Witaj, dzisiaj mamy:
@@ -43,73 +55,167 @@
         </script>
     </h1>
     <p>
-        <h2>Zmienne</h2>
-        
-        <script>
-            let napis = "Hello world"
-            let liczba = 123
-            let tablica = ["technologie", "informacyjne", 456]
-            let obiekt = {imie: "Jan", nazwisko: "Kowalski", wiek: 42}
+    <h2>Zmienne</h2>
 
-            document.write(napis);
-            document.write(napis + " " + liczba + br)
-            document.write(napis + " " + liczba + liczba + br)
-            document.write(napis + " " + liczba * 2)
-        </script>
+    <script>
+        let napis = "Hello world"
+        let liczba = 123
+        let tablica = ["technologie", "informacyjne", 456]
+        let obiekt = { imie: "Jan", nazwisko: "Kowalski", wiek: 42 }
+
+        document.write(napis + br);
+        document.write(napis + " " + liczba + br)
+        document.write(napis + " " + liczba + liczba + br)
+        document.write(liczba + liczba + br)
+        document.write(napis + " " + liczba * 2)
+    </script>
 
     </p>
     <p>
-        <h2>
-            Operatory
-        </h2>
-        <script>
-            let cena_netto = 1200
-            let vat = 23
-            let cena_brutto = cena_netto + cena_netto * vat / 100
-            document.write("Netto " + cena_netto + br)
-            document.write("Brutto " + cena_brutto + br)
-        </script>
+    <h2>
+        Operatory
+    </h2>
+    <script>
+        let cena_netto = 1200
+        let vat = 23
+        let cena_brutto = cena_netto + cena_netto * vat / 100
+        document.write("Netto " + cena_netto + br)
+        document.write("Brutto " + cena_brutto + br)
+    </script>
     </p>
     <p>
-        <h2> Tablice</h2>
-        <script>
-            let tablica1 = [];
-            let tablica2 = new Array();
-            let tablica3 = ["technologie", "informacyjne", 456];
-            let tablica4 = new Array(5);
+    <h2> Tablice</h2>
+    <script>
+        let tablica1 = [];
+        let tablica2 = new Array();
+        let tablica3 = ["technologie", "informacyjne", 456];
+        let tablica4 = new Array(5);
 
-            document.write(tablica1[0] + br);
-            document.write(tablica2[0] + br);
-            document.write(tablica3[0] + br);
-            document.write(tablica4[0] + br);
+        document.write(tablica1[0] + br);
+        document.write(tablica2[0] + br);
+        document.write(tablica3[0] + br);
+        document.write(tablica4[0] + br);
 
-            tablica1[1] = "pierwsza tablica";
-            tablica2[1] = "druga tablica"
 
-            document.write(tablica1[0] + br);
-            document.write(tablica2[0] + br);
-            document.write(tablica3[1] + br);
-            document.write(tablica4[1] + br);
-        </script>
+
+        tablica1[1] = "pierwsza tablica";
+        tablica2[1] = "druga tablica"
+
+
+    </script>
+    </p>
+    <p>
+    <h2> Po przekształceniu</h2>
+    <script>
+        document.write(tablica1[0] + br);
+        document.write(tablica2[0] + br);
+        document.write(tablica3[1] + br);
+        document.write(tablica4[1] + br);
+    </script>
+    </p>
+    <p>
+    <h2>Funkcje</h2>
+    <script>
+        document.write(ObliczPodatek(300000, 100000, 32));
+        let podatek2 = ObliczPodatek(1000, 1300, 12);
+        document.write(podatek2)
+    </script>
     </p>
 
     <p>
-        <h2>Funkcje</h2>
-        <script>
-            document.write(ObliczPodatek(300000, 100000, 32));
-            let podatek2 = ObliczPodatek(1000, 1300, 12);
-            document.write(podatek2)
-        </script>
-    </p>
-    
-    <p>
-        <h2>Instrukcje warunkowe</h2>
-        <script>
-            document.write(ObliczPodatek(300000, 100000));
-            document.write(ObliczPodatekProgresywny(1000, 1300));
+    <h2>Instrukcje warunkowe</h2>
+    <script>
+        document.write(ObliczPodatek(300000, 100000));
+        document.write(ObliczPodatekProgresywny(1000, 1300));
 
-        </script>
+    </script>
     </p>
-    
+    <p>
+    <h2> Pętla while </h2>
+    <script>
+        let x = 1
+        while (x < 5) {
+            document.write(`parametr x wynosi: ${x} ${br}`);
+            x += 1; //x++
+        }
+    </script>
+    </p>
+    <p>
+    <h2>Petla For</h2>
+    <script>
+        let y = 1
+        for (let i = 0; i < 5; i++) {
+            document.write(`parametr y wynosi ${y} ${br}`)
+            y = y * 5
+        }
+
+        for (let i = 10; i > 0; i--) {
+            document.write(`i wynosi ${i} ${br}`);
+        }
+    </script>
+    </p>
+    <p>
+    <h2>Petle zagniezdzone</h2>
+    <script>
+        //nested loops
+        let sala = [
+            ["Zbigniew", "Bożydar", "Polikarp"],
+            ["Adam", "Apolonia", "Romuald"],
+            ["Zdzisław", "Aleksander", "Dobromir"]
+        ];
+        for (let i = 0; i < sala.length; i++) {
+            document.write(`${br} rzad: ${i + 1} ${br}`);
+            for (j = 0; j < sala[0].length; j++) {
+                document.write(`${sala[i][j]},`)
+            }
+        }
+    </script>
+    </p>
+    <p>
+    <h2>Pobieranie danych do zmiennych</h2>
+    <form name="myform">
+        imie:
+        <input type="text" name="name"><br />
+        wiek
+        <input type="text" name="age"><br />
+        <input type="button" value="Submit" onclick="MyAction()">
+    </form>
+    </p>
+    <p id="message">
+    </p>
+    <p>
+    <h2> Parsowanie/konwersja</h2>
+    <script>
+        let name2 = prompt("Podaj swoje imie: ");
+        let age2 = parseInt(prompt("podaj swoj wiek: "));
+
+        let text1 = `Witaj ${name2}, masz ${age2} lat ${br}`;
+        let text2 = `za 5 lat bedziesz miec: ${age2 + 5}`;
+
+        document.write(text1)
+        document.write(text2)
+    </script>
+    </p>
+    <p>
+    <h2> Ciag fibonacciego</h2>
+    <script>
+        let n = parseInt(prompt("ile liczb: "));   
+        function fib() {
+            let a = 0;
+            let b = 1;
+            document.write(`0 element ciagu wynosi ${a} ${br}`)
+            document.write(`1 element ciagu wynosi ${b} ${br}
+            `)
+            for (let i = 2; i <= n; i++) {
+                let z = a + b;
+                document.write(`${i} element ciagu wynosi ${z} ${br}`);
+                a = b;
+                b = z;
+            }
+        }
+        fib()
+    </script>
+    </p>
 </body>
+
 </html>
